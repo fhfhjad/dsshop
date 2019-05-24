@@ -10,9 +10,11 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
-	"appid": "",
-	"projectname": "dsshop",
+	"appid": "wxdb38c7239b703037",
+	"projectname": "wafer%20php%20demo",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

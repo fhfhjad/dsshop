@@ -33,29 +33,32 @@
     "selectedColor": "#d81e06",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "page/component/index",
-      "iconPath": "image/home.png",
-      "selectedIconPath": "image/home-on.png",
-      "text": "首页"
-    }, {
-      "pagePath": "page/component/pages/report/report",
-      "iconPath": "image/classification.png",
-      "selectedIconPath": "image/classification-on.png",
-      "text": "分类"
-    },
-    {
-      "pagePath": "page/component/pages/details/car",
-      "iconPath": "image/shop.png",
-      "selectedIconPath": "image/shop-on.png",
-      "text": "购物车"
-    },
-    {
-      "pagePath": "page/component/pages/my/my",
-      "iconPath": "image/my.png",
-      "selectedIconPath": "image/my-on.png",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "page/component/index",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/component/pages/report/report",
+        "iconPath": "image/classification.png",
+        "selectedIconPath": "image/classification-on.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "page/component/pages/details/car",
+        "iconPath": "image/shop.png",
+        "selectedIconPath": "image/shop-on.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "page/component/pages/my/my",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/my-on.png",
+        "text": "我的"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,
@@ -63,5 +66,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": false
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
 }
