@@ -23,7 +23,7 @@ class PluginsAction extends AdminCommAction {
 	* @获取插件
 	* @dirname	要遍历的目录名字
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function templateDatas($dirname){

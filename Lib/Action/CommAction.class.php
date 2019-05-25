@@ -21,7 +21,7 @@ class CommAction extends SharingAction{
 	*	i		//积分值
 	*   o		//积分参数
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/

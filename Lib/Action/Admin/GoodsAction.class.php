@@ -103,10 +103,10 @@ class GoodsAction extends AdminCommAction {
             $create['attribute']=json_encode ($arr);
             $create['zimg']=$this->_post('i_img');
             //生成缩略图
-            $this->addgoimg($this->_post('i_img'));
-            foreach($this->_post('img') as $i){
-                $this->addgoimg($i);
-            }
+//            $this->addgoimg($this->_post('i_img'));
+//            foreach($this->_post('img') as $i){
+//                $this->addgoimg($i);
+//            }
             $create['sentiment']=$this->_post('sentiment');
             $create['recommend']=$this->_post('recommend');
             $create['img']=json_encode ($this->_post('img'));
@@ -224,12 +224,12 @@ class GoodsAction extends AdminCommAction {
             if(!$this->_post('nameB')){
                 $this->error("尺寸必须");
             }
-            if(!$this->_post('i_img')){
-                $this->error("商品主图必须");
-            }
-            if(!$this->_post('img')){
-                $this->error("商品细节图必须");
-            }
+//            if(!$this->_post('i_img')){
+//                $this->error("商品主图必须");
+//            }
+//            if(!$this->_post('img')){
+//                $this->error("商品细节图必须");
+//            }
             if(!$this->_post('stock')){
                 $this->error("商品库存必须");
             }
@@ -265,10 +265,10 @@ class GoodsAction extends AdminCommAction {
 
             $create['zimg']=$this->_post('i_img');
             //生成缩略图
-            $this->addgoimg($this->_post('i_img'));
-            foreach($this->_post('img') as $i){
-                $this->addgoimg($i);
-            }
+//            $this->addgoimg($this->_post('i_img'));
+//            foreach($this->_post('img') as $i){
+//                $this->addgoimg($i);
+//            }
             $create['img']=json_encode ($this->_post('img'));
             $create['instructions']=$this->_post('instructions');
             $create['sentiment']=$this->_post('sentiment');

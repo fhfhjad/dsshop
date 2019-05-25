@@ -7212,7 +7212,7 @@ CREATE TABLE IF NOT EXISTS `ds_links` (
 --
 
 INSERT INTO `ds_links` (`id`, `title`, `url`, `state`, `time`, `img`, `order`) VALUES
-(1, '宁波天发网络', 'http://www.tifaweb.com', 0, '1431481160', '', 0),
+(1, '都丽社区', 'http://www.tifaweb.com', 0, '1431481160', '', 0),
 (2, 'Dswjcms', 'http://www.dswjcms.com', 0, '1431481176', '', 0);
 
 -- --------------------------------------------------------
@@ -7478,7 +7478,7 @@ CREATE TABLE IF NOT EXISTS `ds_smtp` (
 --
 
 INSERT INTO `ds_smtp` (`id`, `smtp`, `validation`, `send_email`, `password`, `addresser`) VALUES
-(1, 'smtp.126.com', 1, 'tifawebcesi@126.com', 'abcd12345', '宁波天发网络');
+(1, 'smtp.126.com', 1, 'tifawebcesi@126.com', 'abcd12345', '都丽社区');
 
 -- --------------------------------------------------------
 
@@ -7521,7 +7521,7 @@ INSERT INTO `ds_system` (`id`, `state`, `prompt`, `value`, `name`, `type`) VALUE
 (20, '充值手续费', '请输入充值手续费', '0.001', 'sys_topUpFees', 1),
 (21, '充值手续费额度大于为0小于为1', '大于为0小于为1', '0', 'sys_topUFC', 1),
 (22, '线上充值手续费', '请输入线上充值手续费', '0.004', 'sys_onlinePoundage', 1),
-(31, '公司', '请输入公司名', '宁波天发网络', 'sys_company', 1),
+(31, '公司', '请输入公司名', '都丽社区', 'sys_company', 1),
 (37, '公司所在地', '请输入办公地址', '浙江省宁波市鄞州区南部商务区宁波商会B605', 'sys_officeAddress', 1),
 (43, '是否关闭站点1是0否', '请输入1或0', '0', 'sys_site_switch', 1),
 (44, '站点关闭显示内容', '请输入内容', '网站升级中，升级时间：2018-12-23 13：10：00 至 2018-12-24 08:00:00', 'sys_site_cause', 2),

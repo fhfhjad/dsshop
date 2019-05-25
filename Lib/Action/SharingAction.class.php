@@ -15,7 +15,7 @@ class SharingAction extends Action{
 	/**
 	 * @前台验证
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function homeVerify(){
@@ -53,7 +53,7 @@ class SharingAction extends Action{
 	 * @根据id生成唯一订单号
 	 * @当前时间戳+随机
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function orderNumber() {
@@ -71,7 +71,7 @@ class SharingAction extends Action{
 	 * @name		快递公司(不支持中文)
 	 * @number		快递单号
 	 * @作者			shop猫
-	 * @版权			宁波天发网络
+	 * @版权			都丽社区
 	 * @官网			http://www.tifaweb.com http://www.dswjcms.com
 	 * @快递公司查询：http://code.google.com/p/kuaidi-api/wiki/Open_API_API_URL
 	 *
@@ -90,7 +90,7 @@ class SharingAction extends Action{
      * @type    记录类型
      * @id      是否开启
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
      */
     protected function Record($type,$id=0){
@@ -109,7 +109,7 @@ class SharingAction extends Action{
 	 *
 	 * @城市
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	protected function city(){
@@ -133,7 +133,7 @@ class SharingAction extends Action{
 	 * @l		条数
 	 * @r		是否关联查询
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function top($m,$w,$o,$l,$r=1) {
@@ -149,7 +149,7 @@ class SharingAction extends Action{
    /**
 	* @积分配置
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function integralConf(){
@@ -165,7 +165,7 @@ class SharingAction extends Action{
 	 * @积分添加
 	 * @array	参数
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 *--------------使用说明-----------------
 	 $add['member']=array(
@@ -238,7 +238,7 @@ class SharingAction extends Action{
 	 *
 	 * @邮件发送
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function email_send($arr){
@@ -318,7 +318,7 @@ class SharingAction extends Action{
 	*
 	* @系统配置
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function systems(){
@@ -341,7 +341,7 @@ class SharingAction extends Action{
 	* @arr		记录说明
 	* @uid		用户ID
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -361,7 +361,7 @@ class SharingAction extends Action{
 	 * @array	类型细分
      * @id      是否开启
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
      */
     protected function moneyLog($array,$finetype,$id=0){
@@ -388,7 +388,7 @@ class SharingAction extends Action{
 	* @q	不为0时显示认证信息
 	* @limit	条数
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -436,7 +436,7 @@ class SharingAction extends Action{
 	*
 	* @线下银行
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -458,7 +458,7 @@ class SharingAction extends Action{
 	* @提现手续费
 	* @m	提现金额
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -506,7 +506,7 @@ class SharingAction extends Action{
 	* @limit	条数
 	* @order	排序
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com	
 	*
 	*/
@@ -551,7 +551,7 @@ class SharingAction extends Action{
     * @充值手续费
 	* @m	充值金额
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -580,7 +580,7 @@ class SharingAction extends Action{
     * @线上充值手续费
 	* @m	充值金额
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -598,7 +598,7 @@ class SharingAction extends Action{
 	* @资金表
 	* @field		需要的字段
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -621,7 +621,7 @@ class SharingAction extends Action{
 	* @uid		用户id
 	* @field	需要的字段
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -637,7 +637,7 @@ class SharingAction extends Action{
 	 * @l		条数
 	 * @order	排序
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 *
 	 */
@@ -655,7 +655,7 @@ class SharingAction extends Action{
 	*
 	* @excel列转换
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -677,7 +677,7 @@ class SharingAction extends Action{
 	* @--t					字段类型
 	* @-content			数据(数组)
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*
 	*/
@@ -717,7 +717,7 @@ class SharingAction extends Action{
 	/**
 	 * @后台总数据统计
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function statistical(){
@@ -789,7 +789,7 @@ class SharingAction extends Action{
 	/**
 	 * @查看头像是否存在
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function headPortrait($img){
@@ -803,7 +803,7 @@ class SharingAction extends Action{
 	 * @id			//栏目ID
 	 * @limt		//显示条数
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function someArticle($id,$limt){
@@ -816,7 +816,7 @@ class SharingAction extends Action{
 	 * @版权管理
 	 * @请不要做修改或删除，因多处调用此方法，如因自行修改造成的资金错误、软件不能正常使用后果自行承担
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function copyright($tf=0){
@@ -846,7 +846,7 @@ class SharingAction extends Action{
 	* @curlGet	传输数据
 	* @url		地址
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	* @curlPost	传输数据
 	* @url		传输地址
@@ -866,7 +866,7 @@ class SharingAction extends Action{
 	*
 	* @curl数据传输
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	* @curlPost	传输数据
 	* @url		传输地址
@@ -892,7 +892,7 @@ class SharingAction extends Action{
 	*
 	* @数据库自动备份
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function automaticBackup(){
@@ -917,7 +917,7 @@ class SharingAction extends Action{
 	* @显示指定目录文件
 	* @dirname	要遍历的目录名字	
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function directory($dirname){
@@ -943,7 +943,7 @@ class SharingAction extends Action{
 	* @模板数据获取
 	* @dirname	要遍历的目录名字
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function templateData($dirname){
@@ -964,7 +964,7 @@ class SharingAction extends Action{
 	* @导出Word
 	* @name		自定义名称(不支持中文)
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function exportWord($name){
@@ -996,7 +996,7 @@ class SharingAction extends Action{
 	* @删除指定文件
 	* @path		路径
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function pathExit(){
@@ -1011,7 +1011,7 @@ class SharingAction extends Action{
 	* @联动取值
 	* @pid		类目
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function linkageValue($pid){
@@ -1027,7 +1027,7 @@ class SharingAction extends Action{
 	*
 	* @防黑操作记录
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function webScan(){
@@ -1054,7 +1054,7 @@ class SharingAction extends Action{
 	* @title	标题
 	* @content	内容
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function mailNotice($arr){
@@ -1082,7 +1082,7 @@ class SharingAction extends Action{
 	*	title	标题
 	*  	msg		内容
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function  silSingle($arr){
@@ -1100,7 +1100,7 @@ class SharingAction extends Action{
 	*   pid		回复的站内信ID
 	*  	msg		内容
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function  silReply($arr){
@@ -1117,7 +1117,7 @@ class SharingAction extends Action{
 	*	title	标题
 	*  	msg		内容
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function  silMass($arr){
@@ -1135,7 +1135,7 @@ class SharingAction extends Action{
 	* @uid		用户ID
 	* @state	0未读1已读2删除
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function  silSend($uid,$state=''){
@@ -1153,7 +1153,7 @@ class SharingAction extends Action{
 	* @state	0未读1已读2删除
 	* @limit	条数
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function silReceipt($uid,$state='',$limit){
@@ -1195,7 +1195,7 @@ class SharingAction extends Action{
 	* @站内信收件箱
 	* @id		站内信ID
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function singleReceipt($id){
@@ -1211,7 +1211,7 @@ class SharingAction extends Action{
 	*
 	* @生成手机验证码
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function cellpcode(){
@@ -1223,7 +1223,7 @@ class SharingAction extends Action{
 	*
 	* @生成邮箱验证码
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function emailcode(){
@@ -1236,7 +1236,7 @@ class SharingAction extends Action{
 	* @直接跳转
 	* @url		跳转地址
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function jumps($url){
@@ -1250,7 +1250,7 @@ class SharingAction extends Action{
      * @param $button_name 确认按钮显示文字
 	 * @action $action 提交地址
      * @return 提交表单HTML文本
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
      */
 	protected function requestForm($para_temp, $method, $button_name,$action) {
@@ -1271,7 +1271,7 @@ class SharingAction extends Action{
 	 * @上传
 	 * @approve	路径
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function upload($approve){
@@ -1290,7 +1290,7 @@ class SharingAction extends Action{
 	/**
 	 * @检测是否手机访问
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function isMobile(){  
@@ -1334,7 +1334,7 @@ class SharingAction extends Action{
 	* @height	保存的高度
 	* @save		保存的图片名称
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function imageProcessing($i,$width,$height,$save){
@@ -1348,7 +1348,7 @@ class SharingAction extends Action{
 	* @清空文件夹
 	* @$dir		绝对路径
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function deldir($dir) {
@@ -1371,7 +1371,7 @@ class SharingAction extends Action{
 	 * @资金记录详细属性获取
 	 * @id		值		
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 *
 	 */
@@ -1403,7 +1403,7 @@ class SharingAction extends Action{
     /**
      * @获取微信access_token获取
      * @作者		shop猫
-     * @版权		宁波天发网络
+     * @版权		都丽社区
      * @官网		http://www.tifaweb.com http://www.dswjcms.com
      */
     protected function wxAccessToken(){
@@ -1437,7 +1437,7 @@ class SharingAction extends Action{
 	/**
 	*数据库备份还原扫描文件
 	* @作者		shop猫
-	* @版权		宁波天发网络
+	* @版权		都丽社区
 	* @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function MyScandir($FilePath = './', $Order = 0) {

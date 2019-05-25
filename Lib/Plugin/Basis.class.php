@@ -15,7 +15,7 @@ class Basis{
 	 * @original	原图片		
 	 * @objective	目标
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function Dsrenames($original,$objective){
@@ -31,7 +31,7 @@ class Basis{
 	 * @错误提示
 	 * @data	提示的内容
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function Dserror($data){
@@ -45,7 +45,7 @@ class Basis{
 	 * @成功提示
 	 * @data	提示的内容
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function Dssucceed($data){
@@ -61,7 +61,7 @@ class Basis{
 	 * @logo	接口标识
 	 * @type	1检测2记录
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function Dsdata($arr,$logo,$type){
@@ -98,7 +98,7 @@ class Basis{
 	 * @删除配置信息
 	 * @logo	接口标识
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function Dsdeletedata($logo){
@@ -126,7 +126,7 @@ class Basis{
 	 * @replace 替换的内容
 	 * @logo	接口标识
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function DsreadFile($path,$find,$starttags='',$endtags='',$replace,$logo){
@@ -159,7 +159,7 @@ class Basis{
 	 * @path	文件路径
 	 * @logo	接口标识
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function DsdeleteFile($path,$logo){
@@ -187,7 +187,7 @@ class Basis{
 	 * @path	文件路径
 	 * @logo	接口标识
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	*/
 	protected function DsdeleteDatabase($logo){

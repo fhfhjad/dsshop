@@ -24,7 +24,7 @@ class AdminCommAction extends CommAction {
 	/**
 	 * @后台验证
      * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */
 	protected function adminVerify(){
@@ -45,7 +45,7 @@ class AdminCommAction extends CommAction {
 	 *
 	 * @后台添加
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	public function tfAdd(){
@@ -56,7 +56,7 @@ class AdminCommAction extends CommAction {
 	 *
 	 * @后台更新
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	public function tfUpda(){
@@ -67,7 +67,7 @@ class AdminCommAction extends CommAction {
 	 *
 	 * @后台更新带验证码
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	public function tfUpdas(){
@@ -82,7 +82,7 @@ class AdminCommAction extends CommAction {
 	 *
 	 * @后台删除
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	public function tfDel(){
@@ -93,7 +93,7 @@ class AdminCommAction extends CommAction {
 	 *
 	 * @带积分更新
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	public function iUpda(){
@@ -104,7 +104,7 @@ class AdminCommAction extends CommAction {
 	 *
 	 * @后台更新带验证码
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	public function iUpdas(){

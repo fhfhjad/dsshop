@@ -55,7 +55,7 @@ class HomeAction extends CommAction{
 	 *
 	 * @前台更新
 	 * @作者		shop猫
-	 * @版权		宁波天发网络
+	 * @版权		都丽社区
 	 * @官网		http://www.tifaweb.com http://www.dswjcms.com
 	 */	
 	public function tfUpda(){

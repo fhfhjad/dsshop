@@ -36,7 +36,7 @@
 			版权所有 (c) 2013-2014，宁波市鄞州区天发网络科技有限公司<br/>
 保留所有权利。<br/>
 
-感谢您选择dswjcms产品。希望我们的努力能为您提供一个高效快速、强大的站点解决方案，和强大的金融解决方案。宁波天发网络公司网址为 http://www.tifaweb.com，DSWJCMS产品官方网址为 http://www.dswjcms.com<br/>
+感谢您选择dswjcms产品。希望我们的努力能为您提供一个高效快速、强大的站点解决方案，和强大的金融解决方案。都丽社区公司网址为 http://www.tifaweb.com，DSWJCMS产品官方网址为 http://www.dswjcms.com<br/>
 
 用户须知：<br/>
 
