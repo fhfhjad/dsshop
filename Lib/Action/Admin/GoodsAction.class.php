@@ -65,12 +65,12 @@ class GoodsAction extends AdminCommAction {
             if(!$this->_post('nameB')){
                 $this->error("尺寸必须");
             }
-            if(!$this->_post('i_img')){
-                $this->error("商品主图必须");
-            }
-            if(!$this->_post('img')){
-                $this->error("商品细节图必须");
-            }
+//            if(!$this->_post('i_img')){
+//                $this->error("商品主图必须");
+//            }
+//            if(!$this->_post('img')){
+//                $this->error("商品细节图必须");
+//            }
             if(!$this->_post('stock')){
                 $this->error("商品库存必须");
             }
