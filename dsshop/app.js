@@ -46,7 +46,7 @@ App({
   unauthorizedPrompt: function () {
     wx.showModal({
       title: "未授权提醒",
-      content: "DSSHOP需要获取一些资料和权限，才能进行相应数据同步\r\n设置方法：“我的”-“微信权限设置”-所有权限设置为允许",
+      content: "DEWLYHOP需要获取一些资料和权限，才能进行相应数据同步\r\n设置方法：“我的”-“微信权限设置”-所有权限设置为允许",
       showCancel: false,
       confirmText: "知道了"
     })
