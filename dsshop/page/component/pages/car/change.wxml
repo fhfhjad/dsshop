@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="page-body" style="padding-bottom:10px;">
+    
+    <!--列表-->
+    <view class="zan-panel">
+      <navigator url="../report/order" class="zan-cell zan-cell--access">
+        <view class="zan-cell__bd">我的订单</view>
+        <view class="zan-cell__ft">查看全部</view>
+      </navigator>
+    </view>
+   
+    <view class="zan-panel">
+      <navigator url="../withdrawal/order" class="zan-cell zan-cell--access">
+        <view class="zan-icon zan-icon-pending-orders panel-icon"></view>
+        <view class="zan-cell__bd">资金明细</view>
+        <view class="zan-cell__ft"></view>
+      </navigator>
+    </view>
+    
+    <view class="zan-panel">
+      <navigator url="../address/index" class="zan-cell zan-cell--access">
+        <view class="zan-icon zan-icon-pending-orders panel-icon"></view>
+        <view class="zan-cell__bd">收货地址</view>
+        <view class="zan-cell__ft"></view>
+      </navigator>
+    </view>
+
+    <!--商品列表-->
+  <view class="goods-list">
+    <navigator url="../address/index"  class="list" >
+      <view class="ll">
+        <view class="img">车位号：14</view>
+        <view class="title">30号楼前</view>
+        <view class="price">期望换到28、29号楼</view>
+      </view>
+    </navigator>
+  </view>
+  <!--商品列表 end-->
+     
+     
+    
+    <!--列表 end-->
+  </view>
+</view>

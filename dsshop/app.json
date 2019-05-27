@@ -20,7 +20,8 @@
     "page/component/pages/report/logistics",
     "page/component/pages/report/report",
     "page/component/pages/content/content",
-    "page/component/pages/search/search"
+    "page/component/pages/search/search",
+    "page/component/pages/car/change"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -39,6 +40,12 @@
         "iconPath": "image/home.png",
         "selectedIconPath": "image/home-on.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "page/component/pages/car/change",
+        "iconPath": "image/wechat.png",
+        "selectedIconPath": "image/wechatHL.png",
+        "text": "汽车"
       },
       {
         "pagePath": "page/component/pages/report/report",
