@@ -34,6 +34,22 @@
         <view class="price">期望换到28、29号楼</view>
       </view>
     </navigator>
+    <navigator url="../address/index"  class="list" >
+          <view class="ll">
+            <view class="img">车位号：14</view>
+            <view class="title">30号楼前</view>
+            <view class="price">期望换到28、29号楼</view>
+          </view>
+        </navigator>
+
+     <navigator url="../address/index"  class="list" >
+           <view class="ll">
+             <view class="img">车位号：14</view>
+             <view class="title">30号楼前</view>
+             <view class="price">期望换到28、29号楼</view>
+           </view>
+         </navigator>
+
   </view>
   <!--商品列表 end-->
      
