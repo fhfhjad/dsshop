@@ -47,6 +47,9 @@ var config = {
 
     // 图片接口
     uploadImgUrl: `https://${host}/Public/uploadify/uploads/`,
+    
+    // 车位接口
+    getParkingCarUrl: `https://${host}/Api/ParkingCar/`,
 };
 
 module.exports = config
