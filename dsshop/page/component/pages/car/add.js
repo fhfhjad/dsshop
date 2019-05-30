@@ -16,6 +16,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	  
+	  $init(this);
+	  
 	  var title, that = this;
 		
 		if (options.id) {
@@ -83,6 +86,41 @@ Page({
 			})
 			return false;
 		}
+		
+		 wx.showLoading({
+		        title: '正在创建...',
+		        mask: true
+		      })
+		      
+		  // 将选择的图片组成一个Promise数组，准备进行并行上传
+      const arr = this.data.images.map(path => {
+        return new Promise((resole, reject) => {
+			wx.uploadFile({
+				// 省略
+				url:getUrl + 'upload',
+				filePath: path,
+				name: 'uploadFile',
+				success(res) {
+					var data = JSON.parse(res.data);
+					console.log("上传成功");
+					console.log(data);
+					resole(data.info);
+				},
+				fail() {
+					reject();
+				}
+			})
+		})
+        
+      }) 
+      
+      
+		 
+		 const uploadArr = this.data.images.map(path => uploadImage(path));	 
+      
+      
+      
+      
 
 		wx.request({
 			url : getUrl + 'getAddParkingCar',
@@ -94,7 +132,8 @@ Page({
 				parking_number:parking_number,
 				parking_location:parking_location,
 				exchange_reason:exchange_reason,
-				status:status
+				status:status,
+				uploadArr:uploadArr
 			},
 			success : function(res) {
 				//console.log(res);
