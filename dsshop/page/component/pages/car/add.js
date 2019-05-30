@@ -97,17 +97,17 @@ Page({
         return new Promise((resole, reject) => {
 			wx.uploadFile({
 				// 省略
-				url:getUrl + 'upload',
+				url:getUrl + 'uploadImg',
 				filePath: path,
 				name: 'uploadFile',
 				success(res) {
 					var data = JSON.parse(res.data);
 					console.log("上传成功");
-					console.log(data);
-					resole(data.info);
+					console.log(data.info);
+//					resole(data.info);
 				},
 				fail() {
-					reject();
+//					reject();
 				}
 			})
 		})

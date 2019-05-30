@@ -145,7 +145,7 @@ class ParkingCarAction extends CommAction
         }
     }
 
-    public function upload($param)
+    public function uploadImg()
     {
         $source = ''; // 上传路径
         $dest = '';
@@ -155,7 +155,6 @@ class ParkingCarAction extends CommAction
             $dest .= $value['savename'];
         }
         $this->uploadOss($source, $dest);
-//         $this->ajaxReturn(1, $dest, 1);
     }
 
     public function uploadOss($source, $dest)
@@ -178,7 +177,7 @@ class ParkingCarAction extends CommAction
             
             $ossClient->uploadFile($bucket, $object, $filePath);
             
-            $this->ajaxReturn(1, 1, 1);
+            $this->ajaxReturn(1, $object, 1);
         } catch (OssException $e) {
             // printf(__FUNCTION__ . ": FAILED\n");
             // printf($e->getMessage() . "\n");
