@@ -132,8 +132,32 @@ class ParkingCarAction extends CommAction
                         'village_id' => $add['village_id'],
                         'user_id' => $add['user_id']
                     ));
+                    
+                    //修改图片 TODO
+                    $arr = split(",",I('get.uploadArr'));
+                    $key = I('get.id');
+                    $data = array();
+                    foreach ($arr as $i => $value) {
+                        $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 0);
+                    }
+                    
+                    M('parking_car_pic') -> addAll($data);
+                    
                 } else { // 添加
-                    M('parking_car')->add($add);
+                   M('parking_car')->add($add);
+                   
+                    $key = M()->getLastInsID();
+                    //保存图片
+                    $arr = split(",",I('get.uploadArr'));
+                    
+                    $data = array();
+                    foreach ($arr as $i => $value) {
+                        $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 0);
+                    }
+                    
+                    M('parking_car_pic') -> addAll($data);
+                    
+                    
                 }
                 
                 $this->ajaxReturn(1, 1, 1);

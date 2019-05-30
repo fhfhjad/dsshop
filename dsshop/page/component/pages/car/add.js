@@ -102,7 +102,7 @@ Page({
 				parking_location:parking_location,
 				exchange_reason:exchange_reason,
 				status:status,
-				uploadArr:this.data.imagesUrl
+				uploadArr:this.data.imagesUrl.toString()
 			},
 			success : function(res) {
 				//console.log(res);
