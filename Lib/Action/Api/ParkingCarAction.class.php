@@ -1,5 +1,13 @@
 <?php
 defined('THINK_PATH') or exit();
+
+if (is_file(__DIR__ . '/../../../aliyunc/autoload.php')) {
+    require_once __DIR__ . '/../../../aliyunc/autoload.php';
+}
+
+use OSS\OssClient;
+use OSS\Core\OssException;
+
 class ParkingCarAction extends CommAction {
     
 
@@ -154,6 +162,48 @@ class ParkingCarAction extends CommAction {
             }
         } else {
             $this->ajaxReturn(0, '非法操作', 0);
+        }
+    }
+    
+    public function upload($param)
+    {
+        $source = ''; // 上传路径
+        $dest = '';
+        $info = $this->upload("car");
+        foreach ($info as $key => $value) {
+            $source .= "" . $value['savepath'] . $value['savename']; // 我用符号把图片路径拼起来
+            $dest .= $value['savename'];
+        }
+        $this->uploadOss($source,$dest);
+        $this->ajaxReturn(1, $dest, 1);
+    }
+    
+    public function uploadOss($source,$dest) {
+        
+        
+        // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。
+        $accessKeyId = "hWPxm3BjsOXcrqaX";
+        $accessKeySecret = "11rbF5nARLcOzLaDI7M8v6WtoqRzyK";
+        // Endpoint以杭州为例，其它Region请按实际情况填写。
+        $endpoint = "http://oss-cn-beijing.aliyuncs.com";
+        // 存储空间名称
+        $bucket= "dewly";
+        // 文件名称
+        $object = $dest;
+        // <yourLocalFile>由本地文件路径加文件名包括后缀组成，例如/users/local/myfile.txt
+        $filePath = $source;
+        
+        try{
+            $ossClient = new OssClient($accessKeyId, $accessKeySecret, $endpoint);
+            
+            $ossClient->uploadFile($bucket, $object, $filePath);
+            
+            $this->ajaxReturn(1, 1, 1);
+        } catch(OssException $e) {
+//             printf(__FUNCTION__ . ": FAILED\n");
+//             printf($e->getMessage() . "\n");
+            $this->ajaxReturn(0, $e->getMessage(), 0);
+            return;
         }
     }
 

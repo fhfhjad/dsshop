@@ -15,6 +15,19 @@
         <input class="zan-field__input zan-cell__bd" placeholder="标题" type="text"  maxlength="200" name="exchange_reason"  value="{{Address.information.address}}"></input>
       </view>
       
+      <view class="question-images">
+		  <block wx:for="{{images}}" wx:key="*this">
+		    <view class="q-image-wrap">
+		      <!-- 图片缩略图  -->
+		      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+		      <!-- 移除图片的按钮  -->
+		      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+		    </view>
+		  </block>
+		</view>
+      
+      <button type="default" size="mini" bindtap="chooseImage" wx:if="{{images.length < 3}}">添加图片</button>
+      
     </view>
     <view class="zan-btns">
         <button class="zan-btn zan-btn--primary" formType="submit">保存</button>
