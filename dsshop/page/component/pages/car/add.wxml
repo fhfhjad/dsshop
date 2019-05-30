@@ -4,15 +4,15 @@
     <view class="zan-panel">
       
       <view class="zan-cell zan-field">
-        <input class="zan-field__input zan-cell__bd" placeholder="车位号" type="text"  maxlength="20" name="parking_number" value="{{Address.information.recipient}}"></input>
+        <input class="zan-field__input zan-cell__bd" placeholder="车位号" type="text"  maxlength="20" name="parking_number" value="{{parkingCarInfo.parking_number}}"></input>
       </view>
       
       <view class="zan-cell zan-field">
-        <input class="zan-field__input zan-cell__bd" placeholder="车位位置" type="text" maxlength="100" name="parking_location" value="{{Address.information.telephone}}"></input>
+        <input class="zan-field__input zan-cell__bd" placeholder="车位位置" type="text" maxlength="100" name="parking_location" value="{{parkingCarInfo.parking_location}}"></input>
       </view>
       
       <view class="zan-cell zan-field">
-        <input class="zan-field__input zan-cell__bd" placeholder="标题" type="text"  maxlength="200" name="exchange_reason"  value="{{Address.information.address}}"></input>
+        <input class="zan-field__input zan-cell__bd" placeholder="标题" type="text"  maxlength="200" name="exchange_reason"  value="{{parkingCarInfo.exchange_reason}}"></input>
       </view>
       
       <view class="question-images">
@@ -24,7 +24,7 @@
 		      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
 		    </view>
 		  </block>
-		</view>
+	  </view>
       
       <button type="default" size="mini" bindtap="chooseImage" wx:if="{{images.length < 3}}">添加图片</button>
       

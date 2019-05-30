@@ -29,7 +29,7 @@ Page({
 			title = '编辑交换车位';
 			//获取收货地址
 			wx.request({
-				url : getUrl + 'getAddressDetails',
+				url : getUrl + 'getParkingCarDetails',
 				data : {
 					id : options.id,
 					openid : wx.getStorageSync('openid'),
@@ -37,14 +37,10 @@ Page({
 					uid : wx.getStorageSync('id'),
 				},
 				success : function(res) {
-
 					if (res.data.status == 1) {
 						that.setData({
-							Address : res.data.info,
-							region : res.data.info.information.city,
-							cityarray : res.data.info.cityarray
+							parkingCarInfo : res.data.info,
 						});
-
 					} else {
 						wx.showToast({
 							title : res.data.info,
