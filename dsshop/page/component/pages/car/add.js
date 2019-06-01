@@ -36,6 +36,7 @@ Page({
 					if (res.data.status == 1) {
 						that.setData({
 							parkingCarInfo : res.data.info,
+							imagesUrl:res.data.info.urls
 						});
 					} else {
 						wx.showToast({
@@ -80,14 +81,6 @@ Page({
 			return false;
 		}
 		
-		if (!exchange_reason) {
-			wx.showToast({
-				title : '描述不能为空',
-				icon : 'none',
-			})
-			return false;
-		}
-		
 		if (!parking_location) {
 			wx.showToast({
 				title : '车位号位置不能为空',
@@ -96,13 +89,22 @@ Page({
 			return false;
 		}
 		
-		if (this.data.imagesUrl.size == 0) {
+		if (!exchange_reason) {
+			wx.showToast({
+				title : '描述不能为空',
+				icon : 'none',
+			})
+			return false;
+		}
+		
+		if (this.data.imagesUrl.length == 0) {
 			wx.showToast({
 				title : '必须上传图片',
 				icon : 'none',
 			})
 			return false;
 		}
+		
 		
 		 wx.showLoading({
 		    title: '正在创建...',
@@ -162,6 +164,7 @@ Page({
 					success(res) {
 						var data = JSON.parse(res.data);
 						that.data.imagesUrl.push(data.info);
+						$digest(that)
 					},
 					fail() {
 						console.log("上传失败")

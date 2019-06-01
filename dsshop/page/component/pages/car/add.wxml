@@ -22,6 +22,7 @@
 		    </view>
 		  </block>
 	  </view>
+	  <button type="default" size="mini" bindtap="chooseImage" wx:if="{{images.length < 3}}">添加图片</button>
       
       <view class="zan-cell zan-field">
         <input class="zan-field__input zan-cell__bd" placeholder="标题" type="text"  maxlength="200" name="exchange_reason"  value="{{parkingCarInfo.exchange_reason}}"></input>
@@ -29,7 +30,7 @@
       
       
       
-      <button type="default" size="mini" bindtap="chooseImage" wx:if="{{images.length < 3}}">添加图片</button>
+      
       
     </view>
     <view class="zan-btns">

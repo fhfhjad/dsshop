@@ -86,6 +86,9 @@ class ParkingCarAction extends CommAction
                 'id' => I('get.id')
             ))->find();
             if ($parkingCar['id'] && $parkingCar['id'] > 0) {
+                $parkingCar["urls"] = M('parking_car_pic')->where(array(
+                    'parking_car_id' => I('get.id')
+                ))->find();
                 $this->ajaxReturn(1, $parkingCar, 1);
             } else {
                 $this->ajaxReturn(0, 'ID有误', 0);
@@ -129,11 +132,14 @@ class ParkingCarAction extends CommAction
                     $key = I('get.id');
                     $data = array();
                     foreach ($arr as $i => $value) {
-                        $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 0);
+                        if ($i == 0)
+                            $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 1);
+                            else
+                                $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 0);
                     }
-                    M('parking_car_pic')->select(array(
-                        'parking_car_id'=> I('get.id')
-                    ))->delete();
+//                     M('parking_car_pic')->select(array(
+//                         'parking_car_id'=> I('get.id')
+//                     ))->delete();
                     
                     M('parking_car_pic') -> addAll($data);
                     
