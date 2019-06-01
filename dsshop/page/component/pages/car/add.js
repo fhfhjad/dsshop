@@ -1,6 +1,5 @@
 const uploadImgUrl = require('../../../../config').uploadImgUrl
 const getUrl = require('../../../../config').getParkingCarUrl
-
 import { $init, $digest } from '../../../../utils/common.util'
 
 Page({
@@ -17,11 +16,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	  
 	  $init(this);
-	  
 	  var title, that = this;
-		
 		if (options.id) {
 			this.setData({
 				id : options.id
@@ -64,8 +60,6 @@ Page({
   onReady: function () {
 
   },
-  
-  
 
   formSubmit : function(e) {
 
@@ -76,9 +70,9 @@ Page({
 		var parking_number = val.parking_number;
 		var parking_location = val.parking_location;
 		var exchange_reason = val.exchange_reason;
-		var status = val.status?val.status:1;
+		var status = val.status?val.status:1; //发布状态
 		
-		if (!val.parking_number) {
+		if (!parking_number) {
 			wx.showToast({
 				title : '车位号不能为空',
 				icon : 'none',
@@ -86,9 +80,33 @@ Page({
 			return false;
 		}
 		
+		if (!exchange_reason) {
+			wx.showToast({
+				title : '描述不能为空',
+				icon : 'none',
+			})
+			return false;
+		}
+		
+		if (!parking_location) {
+			wx.showToast({
+				title : '车位号位置不能为空',
+				icon : 'none',
+			})
+			return false;
+		}
+		
+		if (this.data.imagesUrl.size == 0) {
+			wx.showToast({
+				title : '必须上传图片',
+				icon : 'none',
+			})
+			return false;
+		}
+		
 		 wx.showLoading({
-		        title: '正在创建...',
-		        mask: true
+		    title: '正在创建...',
+		    mask: true
 		 })
 
 		wx.request({
@@ -97,11 +115,11 @@ Page({
 				openid : wx.getStorageSync('openid'),
 				verify : wx.getStorageSync('verify'),
 				uid : wx.getStorageSync('id'),
-				id : id,
-				parking_number:parking_number,
-				parking_location:parking_location,
-				exchange_reason:exchange_reason,
-				status:status,
+				id : id, //主键
+				parking_number:parking_number, //车位号
+				parking_location:parking_location, //车位位置
+				exchange_reason:exchange_reason,  //交换描述
+				status:status,  //状态
 				uploadArr:this.data.imagesUrl.toString()
 			},
 			success : function(res) {
@@ -123,19 +141,17 @@ Page({
 		
 	//选择图片
 	  chooseImage(e) {
-		
 		var that = this;
-		
 	    wx.chooseImage({
 	      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
 	      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
 	      success: res => {
 	        const images = this.data.images.concat(res.tempFilePaths)
-//	        console.log(images);
 	        // 限制最多只能留下3张照片
 	        this.data.images = images.length <= 3 ? images : images.slice(0, 3) 
 	        $digest(this)
 	        
+	        that.data.imagesUrl = []; //清空，重新上传
 	        //上传图片
 	        this.data.images.map(path =>{
 				wx.uploadFile({
@@ -162,7 +178,8 @@ Page({
 		    const idx = e.target.dataset.idx
 		    this.data.images.splice(idx, 1)
 		    $digest(this)
-		  },
+	  },
+	  
 	  //预览图片
 	  handleImagePreview(e) {
 	    const idx = e.target.dataset.idx
@@ -172,5 +189,4 @@ Page({
 	      urls: images,  //所有要预览的图片
 	    })
 	  }
-	
 })
