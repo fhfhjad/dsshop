@@ -17,7 +17,7 @@ class ParkingCarAction extends CommAction
         header("Content-Type:text/html; charset=utf-8");
         date_default_timezone_set('Asia/Shanghai');
         if (I('get.openid')) {
-            $parkingCar = M('parking_car')->where(array(
+            $parkingCar = M('parking_car')-> order('id desc') ->where(array(
                 'status' => 1
             ))->select();
             if ($parkingCar && count($parkingCar) > 0) {
@@ -132,8 +132,9 @@ class ParkingCarAction extends CommAction
                         $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 0);
                     }
                     M('parking_car_pic')->select(array(
-                        'parking_car_id'=> $key
+                        'parking_car_id'=> I('get.id')
                     ))->delete();
+                    
                     M('parking_car_pic') -> addAll($data);
                     
                 } else { // 添加
@@ -307,7 +308,7 @@ class ParkingCarAction extends CommAction
     
     //-------------------------
     // 停车位意向聊天列表
-    public function getParkingIntention()
+    public function getParkingIntentionMsg()
     {
         header("Content-Type:text/html; charset=utf-8");
         date_default_timezone_set('Asia/Shanghai');
@@ -326,7 +327,7 @@ class ParkingCarAction extends CommAction
     }
     
     // 删除停车位意向聊天列表
-    public function getDeleteParkingIntention()
+    public function getDeleteParkingIntentionMsg()
     {
         if (I('get.openid')) {
             $user = M('user')->where(array(
@@ -350,7 +351,7 @@ class ParkingCarAction extends CommAction
     }
     
     // 停车位意向聊天详情
-    public function getParkingIntentionDetails()
+    public function getParkingIntentionMsgDetails()
     {
         if (I('get.openid')) {
             if (! I('get.id')) {
@@ -371,7 +372,7 @@ class ParkingCarAction extends CommAction
     }
     
     // 添加/修改停车位意向
-    public function getAddParkingIntention()
+    public function getAddParkingIntentionMsg()
     {
         if (I('get.openid')) {
             $user = M('user')->where(array(
