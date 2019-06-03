@@ -34,9 +34,14 @@ Page({
 				},
 				success : function(res) {
 					if (res.data.status == 1) {
+						var arr = res.data.info.urls;
+						var arrUlr = [];
+					    for (var i = 0; i < arr.length; i++) {
+					    	arrUlr[i] = arr[i].url;
+					    }
 						that.setData({
 							parkingCarInfo : res.data.info,
-							imagesUrl:res.data.info.urls
+							imagesUrl:arrUlr
 						});
 					} else {
 						wx.showToast({

@@ -88,7 +88,7 @@ class ParkingCarAction extends CommAction
             if ($parkingCar['id'] && $parkingCar['id'] > 0) {
                 $parkingCar["urls"] = M('parking_car_pic')->where(array(
                     'parking_car_id' => I('get.id')
-                ))->find();
+                ))->select();
                 $this->ajaxReturn(1, $parkingCar, 1);
             } else {
                 $this->ajaxReturn(0, 'ID有误', 0);
@@ -115,7 +115,6 @@ class ParkingCarAction extends CommAction
                 $add['create_time'] = time(); //创建时间
                 if (I('get.id') > 0) { // 更新
                     $arr = split(",",I('get.uploadArr'));
-                    
                     M('parking_car')->where(array(
                         'id' => I('get.id')
                     ))->save(array(
@@ -134,14 +133,13 @@ class ParkingCarAction extends CommAction
                     foreach ($arr as $i => $value) {
                         if ($i == 0)
                             $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 1);
-                            else
-                                $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 0);
+                        else
+                            $data[$i] = array('parking_car_id'=>$key,'url' =>$value,'status' => 0);
                     }
-//                     M('parking_car_pic')->select(array(
-//                         'parking_car_id'=> I('get.id')
-//                     ))->delete();
-                    
-                    M('parking_car_pic') -> addAll($data);
+
+                    M('parking_car_pic')->where(array('parking_car_id'=>I('get.id')))->delete();
+                    if (sizeof($data) != 0)
+                        M('parking_car_pic') -> addAll($data);
                     
                 } else { // 添加
                     $arr = split(",",I('get.uploadArr'));
@@ -167,6 +165,24 @@ class ParkingCarAction extends CommAction
             $this->ajaxReturn(0, '非法操作', 0);
         }
     }
+    
+    //test delete
+//     public function deletest(){
+//         M('parking_car_pic')->where(
+//             array(
+//                 'parking_car_id'=>I('get.id')
+//             )
+//         )->delete();
+//         $this->ajaxReturn(1, 1, 1);
+//     }
+
+    public  function getList(){
+        $list = M('parking_car_pic')->where(array(
+            'parking_car_id' => I('get.id')
+        ))->select();
+        $this->ajaxReturn(count($list), $list, 1);
+    }
+    
 
     public function uploadImg()
     {   
