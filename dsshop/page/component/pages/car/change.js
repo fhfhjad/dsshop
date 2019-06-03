@@ -39,5 +39,11 @@ Page({
       }
     })
   },
+
+  onAddParkingCar: function (e) {
+    wx.navigateTo({
+      url: 'add'
+    })
+  },
 	
 })
