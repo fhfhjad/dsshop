@@ -1,0 +1,42 @@
+
+<view>
+  <form  bindsubmit="formSubmit">
+    <view class="zan-panel">
+
+
+      <view class="zan-cell zan-field">
+        <input class="zan-field__input zan-cell__bd" placeholder="车位号" type="text"  maxlength="20" name="parking_number" value="{{parkingCarInfo.parking_number}}"></input>
+      </view>
+
+      <view class="zan-cell zan-field">
+        <input class="zan-field__input zan-cell__bd" placeholder="车位位置" type="text" maxlength="100" name="parking_location" value="{{parkingCarInfo.parking_location}}"></input>
+      </view>
+
+      <view class="question-images">
+		  <block wx:for="{{imagesUrl}}" wx:key="*this">
+		    <view class="q-image-wrap">
+		      <!-- 图片缩略图  -->
+		      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+		      <!-- 移除图片的按钮  -->
+		      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+		    </view>
+		  </block>
+	  </view>
+	  <button type="default" size="mini" bindtap="chooseImage" wx:if="{{images.length < 3}}">添加图片</button>
+
+      <view class="zan-cell zan-field">
+        <input class="zan-field__input zan-cell__bd" placeholder="标题" type="text"  maxlength="200" name="exchange_reason"  value="{{parkingCarInfo.exchange_reason}}"></input>
+      </view>
+
+
+
+
+
+    </view>
+    <view class="zan-btns">
+        <button class="zan-btn zan-btn--primary" formType="submit">保存</button>
+    </view>
+  </form>
+
+</view>
+

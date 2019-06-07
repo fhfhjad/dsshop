@@ -9,7 +9,7 @@
   <view class="page-body" style="padding-bottom:10px;">
 	  <!--商品列表-->
 	  <view class="goods-list" wx:for="{{parkingCarList}}"  wx:key="id{{index}}">
-	    <navigator url="./add?id={{item.id}}"  class="list" >
+	    <navigator url="./deatil?id={{item.id}}"  class="list" >
 	      <view class="ll">
 	        <!-- 图片缩略图  -->
               <view>
