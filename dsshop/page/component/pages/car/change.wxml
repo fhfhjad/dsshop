@@ -12,15 +12,14 @@
 	    <navigator url="./add?id={{item.id}}"  class="list" >
 	      <view class="ll">
 	        <!-- 图片缩略图  -->
-          <view>
-            <image class="q-image" src="{{item.url}}"></image>
-          </view>
-          <view>
-            <view>车位号:{{item.parking_number}}</view>
-	          <view>车位:{{item.parking_location}}</view>
-	          <view>{{item.exchange_reason}}</view>
-          </view>  
-	        
+              <view>
+                <image class="q-image" src="{{item.url}}"></image>
+              </view>
+              <view>
+                <view>车位号:{{item.parking_number}}</view>
+                  <view>车位:{{item.parking_location}}</view>
+                  <view>{{item.exchange_reason}}</view>
+              </view>
 	      </view>
 	    </navigator>
 	  </view>

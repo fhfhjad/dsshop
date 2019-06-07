@@ -15,35 +15,35 @@ Page({
 	    this.getParkingCarList();
 	  },
 	  //获取停车位列表
-  getParkingCarList(){
-    var that = this, parkingCarList={};
-    wx.request({
-      url: getUrl + 'getParkingCar',
-      data: {
-        openid: wx.getStorageSync('openid'),
-        verify: wx.getStorageSync('verify'),
-        uid: wx.getStorageSync('id'),
-      },
-      success: function (res) {
-        if (res.data.status == 1) {
-        	parkingCarList = res.data.info;
-          that.setData({
-        	  parkingCarList: parkingCarList,
-          }); 
-        } else {
-          wx.showToast({
-            title: res.data.info,
-            icon: 'none',
-          })
-        }
-      }
-    })
-  },
+    getParkingCarList(){
+        var that = this, parkingCarList={};
+        wx.request({
+          url: getUrl + 'getParkingCar',
+          data: {
+            openid: wx.getStorageSync('openid'),
+            verify: wx.getStorageSync('verify'),
+            uid: wx.getStorageSync('id'),
+          },
+          success: function (res) {
+            if (res.data.status == 1) {
+                parkingCarList = res.data.info;
+              that.setData({
+                  parkingCarList: parkingCarList,
+              });
+            } else {
+              wx.showToast({
+                title: res.data.info,
+                icon: 'none',
+              })
+            }
+          }
+        })
+    },
 
-  onAddParkingCar: function (e) {
-    wx.navigateTo({
-      url: 'add'
-    })
-  },
+    onAddParkingCar: function (e) {
+        wx.navigateTo({
+          url: 'add'
+        })
+    },
 	
 })

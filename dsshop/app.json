@@ -22,7 +22,8 @@
     "page/component/pages/content/content",
     "page/component/pages/search/search",
     "page/component/pages/car/change",
-    "page/component/pages/car/add"
+    "page/component/pages/car/add",
+    "page/component/pages/car/mycar"
   ],
   "window": {
     "navigationBarTextStyle": "black",
