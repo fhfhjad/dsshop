@@ -184,8 +184,11 @@ Page({
 	  //删除图片
 	  removeImage(e) {
 		    const idx = e.target.dataset.idx
+        console.log("sssss")
+        console.log(idx);
 		    this.data.images.splice(idx, 1)
-		    $digest(this)
+		    $digest(this);
+      console.log(this.data.images)
 	  },
 	  
 	  //预览图片

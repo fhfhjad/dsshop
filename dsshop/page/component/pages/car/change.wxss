@@ -25,3 +25,11 @@
 .goods-list .list .price{
   color: #F00;
 }
+
+.q-image{
+	width:60px;
+	height:60px;
+	display:inline-block;
+	overflow:hidden;
+  float: left;
+}

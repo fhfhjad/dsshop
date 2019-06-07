@@ -11,9 +11,16 @@
 	  <view class="goods-list" wx:for="{{parkingCarList}}"  wx:key="id{{index}}">
 	    <navigator url="./add?id={{item.id}}"  class="list" >
 	      <view class="ll">
-	        <view class="img">车位号：{{item.parking_number}}</view>
-	        <view class="title">{{item.parking_location}}</view>
-	        <view class="price">{{item.exchange_reason}}</view>
+	        <!-- 图片缩略图  -->
+          <view>
+            <image class="q-image" src="{{item.url}}"></image>
+          </view>
+          <view>
+            <view>车位号:{{item.parking_number}}</view>
+	          <view>车位:{{item.parking_location}}</view>
+	          <view>{{item.exchange_reason}}hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</view>
+          </view>  
+	        
 	      </view>
 	    </navigator>
 	  </view>
