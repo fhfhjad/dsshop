@@ -1,5 +1,11 @@
 <view class="container">
 
+      <view>
+        <button bindtap="onAddParkingCar">
+        发布车位信息
+        </button>
+      </view>
+
 	  <!--我发布的车位列表-->
 	  <view class="goods-list" wx:for="{{parkingCarList}}"  wx:key="id{{index}}">
 	    <navigator url="./add?id={{item.id}}"  class="list" >

@@ -1,9 +1,9 @@
 <view class="container">
 
   <view>
-  <button bindtap="onAddParkingCar">
-  添加车位信息
-  </button>
+      <button bindtap="onAddParkingCar">
+      发布车位信息
+      </button>
   </view>
 
   <view class="page-body" style="padding-bottom:10px;">
