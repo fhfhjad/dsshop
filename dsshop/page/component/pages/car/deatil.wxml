@@ -19,18 +19,14 @@
     <!--标题 end-->
 
     <view class="details-commission"></view>
-    <!-- 宝贝详情-->
+    <!-- 车位详情-->
     <view class="similar-goods">车位详情</view>
     <view class="margin-bottom50">
       <view class="title-left">
-              {{parkingCarInfo.exchange_reason}}地方就啦多久法拉第积分卡的非可代发件劳动法，
-              发电机房拉的飞机辣豆腐
-              按劳动法的看法大dfd
-
-              发两地分居奥拉夫
+              {{parkingCarInfo.exchange_reason}}
       </view>
     </view>
-    <!-- 宝贝详情 end-->
+    <!-- 车位详情 end-->
   </view>
 </view>
 
@@ -40,15 +36,8 @@
     <image src="../../../../image/customer.png" mode="widthFix" style="width:20px;height:20px;"></image>
     <view class="instructions">客服</view>
   </navigator>
-  <navigator open-type="switchTab" url="../details/car" class="bottom-one">
-    <image src="../../../../image/shop.png" mode="widthFix"  style="width:20px;height:20px;"></image>
-    <block wx:if="{{cartnum>0}}">
-    <view class="angle-the">{{cartnum}}</view>
-    </block>
-    <view class="instructions">购物车</view>
-  </navigator>
-  <view class="bottom-two shop" data-value="0" bindtap="toggleBottomPopup">加入购物车</view>
-  <view class="bottom-two buy" data-value="1" bindtap="toggleBottomPopup">立即购买</view>
+
+  <view class="bottom-two buy" bindtap="getGenerateOrders">有意向</view>
 </view>
 <!--操作 end-->
 

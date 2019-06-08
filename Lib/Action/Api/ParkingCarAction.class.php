@@ -286,7 +286,7 @@ class ParkingCarAction extends CommAction
         }
     }
     
-    // 添加/修改停车位意向
+    // 添加停车位意向
     public function getAddParkingIntention()
     {
         if (I('get.openid')) {
@@ -296,30 +296,25 @@ class ParkingCarAction extends CommAction
             if ($user['id'] && $user['id'] > 0) {
                 
                 $add['parking_car_id'] = $_GET['parking_car_id']; // 车位需求ID
-                $add['customer_user_id'] = $_GET['customer_user_id']; // 意向用户Id
-                $add['customer_user_nick_name'] = $_GET['customer_user_nick_name']; // 意向用户昵称
-                $add['comment'] = $_GET['comment']; //最后一次的聊天内容
-                $add['user_id'] = I('get.uid'); // 用户ID
+                $add['customer_user_id'] = I('get.uid');   // 意向用户Id
+                $add['customer_user_nick_name'] = $user['username']; // 意向用户昵称
+
                 $add['create_time'] = time();   //创建时间
                 $add['update_time'] = time();   //更新时间
-                
-                if (I('get.id') > 0) { // 更新
-                    M('parking_intention')->where(array(
-                        'id' => I('get.id')
-                    ))->save(array(
-                        'parking_car_id' => $add['parking_car_id'],
-                        'customer_user_id' => $add['customer_user_id'],
-                        'customer_user_nick_name' => $add['customer_user_nick_name'],
-                        'comment' => $add['comment'],
-                        'create_time' => $add['create_time'],
-                        'update_time' => $add['update_time'],
-                        'user_id' => $add['user_id']
-                    ));
-                } else { // 添加
+
+                $parkIntention = M('parking_intention')->where(array(
+                    'parking_car_id' => I('get.parking_car_id'),
+                     'customer_user_id' => I('get.uid')
+                )) ->find();
+                if ($parkIntention['id'] && $parkIntention['id'] > 0){
+                    $this->ajaxReturn(1,$parkIntention['id'] , 1);
+                } else{
+                    // 添加
                     M('parking_intention')->add($add);
+                    $key = M()->getLastInsID();
+                    $this->ajaxReturn(1,$key , 1);
                 }
-                
-                $this->ajaxReturn(1, 1, 1);
+
             } else {
                 $this->ajaxReturn(0, 0, 1);
             }

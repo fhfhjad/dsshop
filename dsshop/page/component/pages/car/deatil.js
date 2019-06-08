@@ -16,13 +16,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    console.log("options.id ==");
+    console.log(options.id);
+
     $init(this);
     var title, that = this;
     if (options.id) {
       this.setData({
         id : options.id
       })
-      // title = '车位详情';
+
       //获取收货地址
       wx.request({
         url : getUrl + 'getParkingCarDetails',
@@ -52,12 +56,13 @@ Page({
         }
       })
     } else {
-      title = '发布交换车位';
+        wx.showToast({
+            title : '车位不存在',
+            icon : 'none',
+        })
     }
 
-    // wx.setNavigationBarTitle({
-    //   title : title
-    // })
+
   },
 
   /**
@@ -65,9 +70,36 @@ Page({
    */
   onReady: function () {
 
-  },
+    },
 
+    //提交订单
+    getGenerateOrders() {
 
+        console.log("id ====");
+        console.log(this.data.id);
+
+        wx.request({
+            url : getUrl + 'getAddParkingIntention',
+            data : {
+                openid : wx.getStorageSync('openid'),
+                verify : wx.getStorageSync('verify'),
+                uid : wx.getStorageSync('id'),
+                parking_car_id : this.id
+            },
+            success : function(res) {
+                //console.log(res);
+                if (res.data.status == 1) {
+                    wx.navigateBack();
+                } else {
+                    wx.showToast({
+                        title : res.data.info,
+                        icon : 'none',
+                    })
+                }
+            }
+        })
+
+    }
 
 
 })
