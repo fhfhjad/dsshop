@@ -1,66 +1,99 @@
-// page/component/pages/carmsg/msg.js
+const uploadImgUrl = require('../../../../config').uploadImgUrl
+const getUrl = require('../../../../config').getParkingCarUrl
+import { $init, $digest } from '../../../../utils/common.util'
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        images: [], //临时目录
+        imagesUrl: []
+    },
 
-  },
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function (options) {
+        $init(this);
+        var title, that = this;
+        if (options.id) {
+            this.setData({
+                id : options.id
+            })
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+            //获取收货地址
+            wx.request({
+                url : getUrl + 'getParkingCarDetails',
+                data : {
+                    id : options.id,
+                    openid : wx.getStorageSync('openid'),
+                    verify : wx.getStorageSync('verify'),
+                    uid : wx.getStorageSync('id'),
+                },
+                success : function(res) {
+                    if (res.data.status == 1) {
+                        var arr = res.data.info.urls;
+                        var arrUlr = [];
+                        for (var i = 0; i < arr.length; i++) {
+                            arrUlr[i] = arr[i].url;
+                        }
+                        that.setData({
+                            parkingCarInfo : res.data.info,
+                            imagesUrl:arrUlr
+                        });
+                    } else {
+                        wx.showToast({
+                            title : res.data.info,
+                            icon : 'none',
+                        })
+                    }
+                }
+            })
+        } else {
+            wx.showToast({
+                title : '车位不存在',
+                icon : 'none',
+            })
+        }
 
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    },
 
-  },
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    },
 
-  },
+    //提交订单
+    getGenerateOrders() {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+        wx.request({
+            url : getUrl + 'getAddParkingIntention',
+            data : {
+                openid : wx.getStorageSync('openid'),
+                verify : wx.getStorageSync('verify'),
+                uid : wx.getStorageSync('id'),
+                parking_car_id : this.data.id
+            },
+            success : function(res) {
+                console.log(res);
+                if (res.data.status == 1) {
+                    //wx.navigateBack();
 
-  },
+                } else {
+                    wx.showToast({
+                        title : res.data.info,
+                        icon : 'none',
+                    })
+                }
+            }
+        })
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+    }
 
-  },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

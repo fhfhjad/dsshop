@@ -1,2 +1,45 @@
-<!--page/component/pages/carmsg/msg.wxml-->
-<text>page/component/pages/carmsg/msg.wxml</text>
+<view class="container">
+  <view class="page-body">
+    <!--主图-->
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
+    <block wx:for="{{imagesUrl}}" wx:key="key">
+      <swiper-item>
+        <image src="{{item}}" data-url="{{item}}" bindtap="imgPreview" class="slide-image" lazy-load="true" style="width:100%;height:100%;"/>
+      </swiper-item>
+    </block>
+  </swiper>
+    <!--主图 end-->
+    <!--标题-->
+    <view class="details-now-price">
+      <view class="now-price-left">
+        <view class="now-price-present"><span>车位号{{parkingCarInfo.parking_number}}</span></view>
+      </view>
+      <view class="now-price-right">车位位置{{parkingCarInfo.parking_location}}</view>
+    </view>
+    <!--标题 end-->
+
+    <view class="details-commission"></view>
+    <!-- 车位详情-->
+    <view class="similar-goods">车位详情</view>
+    <view class="margin-bottom50">
+      <view class="title-left">
+              {{parkingCarInfo.exchange_reason}}
+      </view>
+    </view>
+    <!-- 车位详情 end-->
+  </view>
+</view>
+
+<!--操作-->
+<view class="bottom immediately">
+   <navigator class="bottom-one nobottom" url="../my/customer">
+    <image src="../../../../image/customer.png" mode="widthFix" style="width:20px;height:20px;"></image>
+    <view class="instructions">客服</view>
+  </navigator>
+
+  <view class="bottom-two buy" bindtap="getGenerateOrders">有意向</view>
+</view>
+<!--操作 end-->
+
+
+
