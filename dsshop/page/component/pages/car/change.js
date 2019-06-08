@@ -40,10 +40,10 @@ Page({
         })
     },
 
-    onAddParkingCar: function (e) {
-        wx.navigateTo({
-          url: 'add'
-        })
-    },
+  onAddParkingCar: function (e) {
+    wx.navigateTo({
+      url: 'add'
+    })
+  },
 	
 })

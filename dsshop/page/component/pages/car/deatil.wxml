@@ -1,42 +1,56 @@
-
-<view>
-  <form  bindsubmit="formSubmit">
-    <view class="zan-panel">
-
-
-      <view class="zan-cell zan-field">
-        <input class="zan-field__input zan-cell__bd" placeholder="车位号" type="text"  maxlength="20" name="parking_number" value="{{parkingCarInfo.parking_number}}"></input>
+<view class="container">
+  <view class="page-body">
+    <!--主图-->
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
+    <block wx:for="{{imagesUrl}}" wx:key="key">
+      <swiper-item>
+        <image src="{{item}}" data-url="{{item}}" bindtap="imgPreview" class="slide-image" lazy-load="true" style="width:100%;height:100%;"/>
+      </swiper-item>
+    </block>
+  </swiper>
+    <!--主图 end-->
+    <!--标题-->
+    <view class="details-now-price">
+      <view class="now-price-left">
+        <view class="now-price-present"><span>车位号{{parkingCarInfo.parking_number}}</span></view>
       </view>
-
-      <view class="zan-cell zan-field">
-        <input class="zan-field__input zan-cell__bd" placeholder="车位位置" type="text" maxlength="100" name="parking_location" value="{{parkingCarInfo.parking_location}}"></input>
-      </view>
-
-      <view class="question-images">
-		  <block wx:for="{{imagesUrl}}" wx:key="*this">
-		    <view class="q-image-wrap">
-		      <!-- 图片缩略图  -->
-		      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
-		      <!-- 移除图片的按钮  -->
-		      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
-		    </view>
-		  </block>
-	  </view>
-	  <button type="default" size="mini" bindtap="chooseImage" wx:if="{{images.length < 3}}">添加图片</button>
-
-      <view class="zan-cell zan-field">
-        <input class="zan-field__input zan-cell__bd" placeholder="标题" type="text"  maxlength="200" name="exchange_reason"  value="{{parkingCarInfo.exchange_reason}}"></input>
-      </view>
-
-
-
-
-
+      <view class="now-price-right">车位位置{{parkingCarInfo.parking_location}}</view>
     </view>
-    <view class="zan-btns">
-        <button class="zan-btn zan-btn--primary" formType="submit">保存</button>
-    </view>
-  </form>
+    <!--标题 end-->
 
+    <view class="details-commission"></view>
+    <!-- 宝贝详情-->
+    <view class="similar-goods">车位详情</view>
+    <view class="margin-bottom50">
+      <view class="title-left">
+              {{parkingCarInfo.exchange_reason}}地方就啦多久法拉第积分卡的非可代发件劳动法，
+              发电机房拉的飞机辣豆腐
+              按劳动法的看法大dfd
+
+              发两地分居奥拉夫
+      </view>
+    </view>
+    <!-- 宝贝详情 end-->
+  </view>
 </view>
+
+<!--操作-->
+<view class="bottom immediately">
+   <navigator class="bottom-one nobottom" url="../my/customer">
+    <image src="../../../../image/customer.png" mode="widthFix" style="width:20px;height:20px;"></image>
+    <view class="instructions">客服</view>
+  </navigator>
+  <navigator open-type="switchTab" url="../details/car" class="bottom-one">
+    <image src="../../../../image/shop.png" mode="widthFix"  style="width:20px;height:20px;"></image>
+    <block wx:if="{{cartnum>0}}">
+    <view class="angle-the">{{cartnum}}</view>
+    </block>
+    <view class="instructions">购物车</view>
+  </navigator>
+  <view class="bottom-two shop" data-value="0" bindtap="toggleBottomPopup">加入购物车</view>
+  <view class="bottom-two buy" data-value="1" bindtap="toggleBottomPopup">立即购买</view>
+</view>
+<!--操作 end-->
+
+
 
