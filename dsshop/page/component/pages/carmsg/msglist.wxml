@@ -9,9 +9,13 @@
                 <image class="q-image" src="{{item.url}}"></image>
               </view>
               <view>
-                <view>车位号:{{item.parking_number}}</view>
-                <view>车位:{{item.parking_location}}</view>
-                <view>{{item.exchange_reason}}</view>
+                <view>customer_user_id:{{item.customer_user_id}}</view>
+                <view>user_id:{{item.user_id}}</view>
+                <view>parking_car_id:{{item.parking_car_id}}</view>
+
+                <view>customer_user_nick_name:{{item.customer_user_nick_name}}</view>
+                <view>comment:{{item.comment}}</view>
+
               </view>
 	      </view>
 	    </navigator>
