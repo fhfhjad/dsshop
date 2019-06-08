@@ -25,7 +25,8 @@
     "page/component/pages/car/add",
     "page/component/pages/car/mycar",
     "page/component/pages/car/deatil",
-    "page/component/pages/carmsg/msglist"
+    "page/component/pages/carmsg/msglist",
+    "page/component/pages/carmsg/msg"
   ],
   "window": {
     "navigationBarTextStyle": "black",

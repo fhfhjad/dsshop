@@ -1,1 +1,35 @@
-/* page/component/pages/carmsg/msglist.wxss */
+/* 商品列表 */
+.goods-list .list{
+    float:left;
+    width:100%;
+}
+.goods-list .list .ll{
+    margin: 2px;
+    padding: 5px;
+    background: #fff
+}
+
+.goods-list .list .img{
+    max-width: 100%;
+    max-height: 100%;
+
+}
+.goods-list .list .title{
+    font-size: 12px;
+    min-height:45px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.goods-list .list .price{
+    color: #F00;
+}
+
+.q-image{
+    width:60px;
+    height:60px;
+    display:inline-block;
+    overflow:hidden;
+    float: left;
+}
