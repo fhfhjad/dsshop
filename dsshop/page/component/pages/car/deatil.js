@@ -16,10 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    console.log("options.id ==");
-    console.log(options.id);
-
     $init(this);
     var title, that = this;
     if (options.id) {
@@ -75,21 +71,19 @@ Page({
     //提交订单
     getGenerateOrders() {
 
-        console.log("id ====");
-        console.log(this.data.id);
-
         wx.request({
             url : getUrl + 'getAddParkingIntention',
             data : {
                 openid : wx.getStorageSync('openid'),
                 verify : wx.getStorageSync('verify'),
                 uid : wx.getStorageSync('id'),
-                parking_car_id : this.id
+                parking_car_id : this.data.id
             },
             success : function(res) {
-                //console.log(res);
+                console.log(res);
                 if (res.data.status == 1) {
-                    wx.navigateBack();
+                    //wx.navigateBack();
+
                 } else {
                     wx.showToast({
                         title : res.data.info,

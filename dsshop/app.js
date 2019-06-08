@@ -234,3 +234,10 @@ App({
   },
 })
 
+
+// {
+//   "pagePath": "page/component/pages/report/report",
+//   "iconPath": "image/classification.png",
+//   "selectedIconPath": "image/classification-on.png",
+//   "text": "分类"
+// },

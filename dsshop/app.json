@@ -24,7 +24,8 @@
     "page/component/pages/car/change",
     "page/component/pages/car/add",
     "page/component/pages/car/mycar",
-    "page/component/pages/car/deatil"
+    "page/component/pages/car/deatil",
+    "page/component/pages/carmsg/msglist"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -51,10 +52,10 @@
         "text": "汽车"
       },
       {
-        "pagePath": "page/component/pages/report/report",
-        "iconPath": "image/classification.png",
-        "selectedIconPath": "image/classification-on.png",
-        "text": "分类"
+        "pagePath": "page/component/pages/carmsg/msglist",
+        "iconPath": "image/wechat.png",
+        "selectedIconPath": "image/wechatHL.png",
+        "text": "消息"
       },
       {
         "pagePath": "page/component/pages/details/car",
