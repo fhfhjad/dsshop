@@ -12,13 +12,13 @@ Page({
     },
 
     onShow: function (options) {
-        this.getParkingCarList();
+        this.getParkingIntention();
     },
     //获取停车位列表
-    getParkingCarList(){
-        var that = this, parkingCarList={};
+    getParkingIntention(){
+        var that = this, parkingIntentionList={};
         wx.request({
-            url: getUrl + 'getParkingCar',
+            url: getUrl + 'getParkingIntention',
             data: {
                 openid: wx.getStorageSync('openid'),
                 verify: wx.getStorageSync('verify'),
@@ -26,9 +26,9 @@ Page({
             },
             success: function (res) {
                 if (res.data.status == 1) {
-                    parkingCarList = res.data.info;
+                    parkingIntentionList = res.data.info;
                     that.setData({
-                        parkingCarList: parkingCarList,
+                        parkingIntentionList: parkingIntentionList,
                     });
                 } else {
                     wx.showToast({

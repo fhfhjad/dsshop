@@ -229,6 +229,8 @@ class ParkingCarAction extends CommAction
         date_default_timezone_set('Asia/Shanghai');
         if (I('get.openid')) {
             $parkingIntention = M('parking_intention')->where(array(
+                'customer_user_id' => I('get.uid'),
+                '_logic' => 'OR',
                 'user_id' => I('get.uid')
             ))->select();
             if ($parkingIntention && count($parkingIntention) > 0) {
