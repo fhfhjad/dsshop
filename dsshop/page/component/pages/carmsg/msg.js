@@ -41,7 +41,7 @@ Page({
                         // });
 
                         wx.setNavigationBarTitle({
-                            title : this.data.customer_user_nick_name
+                          title: res.data.info.customer_user_nick_name
                         })
 
                     } else {
