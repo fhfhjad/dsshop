@@ -275,7 +275,6 @@ class ParkingCarAction extends CommAction
                 $this->ajaxReturn(0, 'ID有误', 1);
             }
             $parkingIntention = M('parking_intention')->where(array(
-                'user_id' => I('get.uid'),
                 'id' => I('get.id')
             ))->find();
             if ($parkingIntention['id'] && $parkingIntention['id'] > 0) {

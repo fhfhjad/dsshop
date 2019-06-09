@@ -25,7 +25,7 @@ Page({
 
             //获取收货地址
             wx.request({
-                url : getUrl + 'getParkingCarDetails',
+                url : getUrl + 'getParkingIntentionDetails',
                 data : {
                     id : options.id,
                     openid : wx.getStorageSync('openid'),
@@ -34,15 +34,16 @@ Page({
                 },
                 success : function(res) {
                     if (res.data.status == 1) {
-                        var arr = res.data.info.urls;
-                        var arrUlr = [];
-                        for (var i = 0; i < arr.length; i++) {
-                            arrUlr[i] = arr[i].url;
-                        }
-                        that.setData({
-                            parkingCarInfo : res.data.info,
-                            imagesUrl:arrUlr
-                        });
+
+                        console.log(res.data.info)
+                        // that.setData({
+                        //     parkingCarInfo : res.data.info
+                        // });
+
+                        wx.setNavigationBarTitle({
+                            title : this.data.customer_user_nick_name
+                        })
+
                     } else {
                         wx.showToast({
                             title : res.data.info,
@@ -53,7 +54,7 @@ Page({
             })
         } else {
             wx.showToast({
-                title : '车位不存在',
+                title : '消息不存在',
                 icon : 'none',
             })
         }
@@ -68,32 +69,7 @@ Page({
 
     },
 
-    //提交订单
-    getGenerateOrders() {
 
-        wx.request({
-            url : getUrl + 'getAddParkingIntention',
-            data : {
-                openid : wx.getStorageSync('openid'),
-                verify : wx.getStorageSync('verify'),
-                uid : wx.getStorageSync('id'),
-                parking_car_id : this.data.id
-            },
-            success : function(res) {
-                console.log(res);
-                if (res.data.status == 1) {
-                    //wx.navigateBack();
-
-                } else {
-                    wx.showToast({
-                        title : res.data.info,
-                        icon : 'none',
-                    })
-                }
-            }
-        })
-
-    }
 
 
 })
