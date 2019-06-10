@@ -35,14 +35,67 @@ Page({
                 success : function(res) {
                     if (res.data.status == 1) {
 
-                        console.log(res.data.info)
                         // that.setData({
                         //     parkingCarInfo : res.data.info
                         // });
 
+                        //设置名字为标题
                         wx.setNavigationBarTitle({
                           title: res.data.info.customer_user_nick_name
                         })
+
+                        //获取车位详情
+                        wx.request({
+                            url : getUrl + 'getParkingCarDetails',
+                            data : {
+                                id : res.data.info.parking_car_id,
+                                openid : wx.getStorageSync('openid'),
+                                verify : wx.getStorageSync('verify'),
+                                uid : wx.getStorageSync('id'),
+                            },
+                            success : function(res) {
+                                if (res.data.status == 1) {
+                                    that.setData({
+                                        parkingCarInfo : res.data.info
+                                    });
+                                } else {
+                                    wx.showToast({
+                                        title : res.data.info,
+                                        icon : 'none',
+                                    })
+                                }
+                            }
+                        })
+
+                        //获取聊天列表
+                        wx.request({
+                            url: getUrl + 'getParkingIntentionMsg',
+                            data: {
+                                openid: wx.getStorageSync('openid'),
+                                verify: wx.getStorageSync('verify'),
+                                uid: wx.getStorageSync('id'),
+                                parking_intention_id: options.id
+                            },
+                            success: function (res) {
+
+                                console.log("聊天记录")
+                                console.log(res.data.info)
+
+                                var parkingIntentionMsgList = res.data.info;
+
+                                if (res.data.status == 1) {
+                                    that.setData({
+                                        parkingIntentionMsgList: parkingIntentionMsgList,
+                                    });
+                                } else {
+                                    wx.showToast({
+                                        title: res.data.info,
+                                        icon: 'none',
+                                    })
+                                }
+                            }
+                        })
+
 
                     } else {
                         wx.showToast({

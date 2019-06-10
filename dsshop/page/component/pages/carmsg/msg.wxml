@@ -2,26 +2,41 @@
   <view class="page-body">
 
     <!--标题-->
-    <view class="details-now-price">
-      <view class="now-price-left">
-        <view class="now-price-present"><span>车位号{{parkingCarInfo.parking_number}}</span></view>
-      </view>
-      <view class="now-price-right">车位位置{{parkingCarInfo.parking_location}}</view>
-      <view class="title-left">{{parkingCarInfo.exchange_reason}}</view>
+    <view>
+      <image src="{{parkingCarInfo.url}}"></image>
+      <view>车位号{{parkingCarInfo.parking_number}}</view>
+      <view>车位位置{{parkingCarInfo.parking_location}}</view>
+      <view>{{parkingCarInfo.exchange_reason}}</view>
     </view>
     <!--标题 end-->
 
 
     <!-- 聊天详情-->
-    <view class="similar-goods">车位详情</view>
-    <view class="margin-bottom50">
-
+    <view  wx:for="{{parkingIntentionMsgList}}"  wx:key="id{{index}}">
+      <view>
+          <view>昵称:{{item.nick_name}}</view>
+          <view>内容:{{item.message}}</view>
+      </view>
     </view>
     <!-- 聊天详情 end-->
   </view>
 </view>
 
+<!--操作-->
+<view class="bottom immediately">
+    <!--
+   <navigator class="bottom-one nobottom" url="../my/customer">
+    <image src="../../../../image/customer.png" mode="widthFix" style="width:20px;height:20px;"></image>
+    <view class="instructions">客服</view>
+  </navigator>
+  -->
 
+    <view class="sendmessage">
+      <input id="message" bindinput="bindChange"></input>
+      <button bindtap="add">发送</button>
+    </view>
+</view>
+<!--操作 end-->
 
 
 

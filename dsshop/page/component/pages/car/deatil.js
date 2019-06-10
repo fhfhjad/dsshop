@@ -23,7 +23,7 @@ Page({
         id : options.id
       })
 
-      //获取收货地址
+      //获取车位详情
       wx.request({
         url : getUrl + 'getParkingCarDetails',
         data : {
