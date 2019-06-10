@@ -35,10 +35,6 @@ Page({
                 success : function(res) {
                     if (res.data.status == 1) {
 
-                        // that.setData({
-                        //     parkingCarInfo : res.data.info
-                        // });
-
                         //设置名字为标题
                         wx.setNavigationBarTitle({
                           title: res.data.info.customer_user_nick_name
@@ -77,9 +73,6 @@ Page({
                                 parking_intention_id: options.id
                             },
                             success: function (res) {
-
-                                console.log("聊天记录")
-                                console.log(res.data.info)
 
                                 var parkingIntentionMsgList = res.data.info;
 
@@ -122,7 +115,65 @@ Page({
 
     },
 
+    bindChange: function(e) {
+        this.setData({
+            message : e.detail.value
+        });
+    },
+    //事件处理函数
+    add: function(e) {
+        var that = this;
+        //发送聊天
+        wx.request({
+            url : getUrl + 'getAddParkingIntentionMsg',
+            data : {
+                openid : wx.getStorageSync('openid'),
+                verify : wx.getStorageSync('verify'),
+                uid : wx.getStorageSync('id'),
+                message:this.data.message,
+                parking_intention_id: this.data.id
+            },
+            success : function(res) {
+                if (res.data.status == 1) {
 
+                  //获取聊天列表
+                  wx.request({
+                    url: getUrl + 'getParkingIntentionMsg',
+                    data: {
+                      openid: wx.getStorageSync('openid'),
+                      verify: wx.getStorageSync('verify'),
+                      uid: wx.getStorageSync('id'),
+                      parking_intention_id: that.data.id
+                    },
+                    success: function (res) {
+
+                      var parkingIntentionMsgList = res.data.info;
+
+                      if (res.data.status == 1) {
+                        that.setData({
+                          parkingIntentionMsgList: parkingIntentionMsgList,
+                        });
+                          $digest(that)
+                      } else {
+                        wx.showToast({
+                          title: res.data.info,
+                          icon: 'none',
+                        })
+                      }
+                    }
+                  })
+
+                } else {
+                    wx.showToast({
+                        title : res.data.info,
+                        icon : 'none',
+                    })
+                }
+            }
+        })
+
+
+    },
 
 
 })
