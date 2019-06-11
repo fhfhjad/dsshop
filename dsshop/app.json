@@ -48,14 +48,14 @@
       },
       {
         "pagePath": "page/component/pages/car/change",
-        "iconPath": "image/wechat.png",
-        "selectedIconPath": "image/wechatHL.png",
-        "text": "汽车"
+        "iconPath": "image/car.png",
+        "selectedIconPath": "image/car-on.png",
+        "text": "停车位"
       },
       {
         "pagePath": "page/component/pages/carmsg/msglist",
-        "iconPath": "image/wechat.png",
-        "selectedIconPath": "image/wechatHL.png",
+        "iconPath": "image/msg.png",
+        "selectedIconPath": "image/msg_on.png",
         "text": "消息"
       },
       {
