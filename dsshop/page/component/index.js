@@ -1,4 +1,3 @@
-
 const getUrl = require('../../config').getUrl
 const getGoodsUrl = require('../../config').getGoodsUrl
 const uploadImgUrl = require('../../config').uploadImgUrl
@@ -9,7 +8,6 @@ Page({
     getselectedId:0,
     uploadImgUrl: uploadImgUrl,
     p:1,
-   
   },
   
   //商品列表获取
@@ -49,8 +47,6 @@ Page({
               bottomline: null
             });
           }
-
-
         } else {
           that.setData({
             p: pages,
@@ -68,7 +64,6 @@ Page({
         } else {
           wx.hideToast();
         }
-
       }
     })
   },
@@ -93,7 +88,6 @@ Page({
         that.setData({
           imgUrls: res.data.info,
         });
-
       }
     })
     

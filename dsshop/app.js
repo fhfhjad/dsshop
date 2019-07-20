@@ -175,16 +175,13 @@ App({
     if (wx.getStorageSync('getcart')){
       setcart = wx.getStorageSync('getcart');
     }
-    
     code = id +'-' +color +'-'+ size;
-    
     if (!setcart[code]){
       setcart[code] = {};
       setcart[code]['nub'] = nub;
     }else{
       setcart[code]['nub'] += nub;
     }
-    
     setcart[code]['id'] = id;
     setcart[code]['color'] = color;
     setcart[code]['size'] = size;
