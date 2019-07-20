@@ -58,12 +58,7 @@
         "selectedIconPath": "image/msg_on.png",
         "text": "消息"
       },
-      {
-        "pagePath": "page/component/pages/details/car",
-        "iconPath": "image/shop.png",
-        "selectedIconPath": "image/shop-on.png",
-        "text": "购物车"
-      },
+
       {
         "pagePath": "page/component/pages/my/my",
         "iconPath": "image/my.png",

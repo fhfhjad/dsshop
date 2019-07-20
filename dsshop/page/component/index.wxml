@@ -6,7 +6,7 @@
     <block wx:for="{{imgUrls}}" wx:key="key">
       <swiper-item>
         
-        <image src="{{uploadImgUrl}}undefined/{{item.img}}" bindtap="durationChange" data-url="{{item.url}}" class="slide-image" lazy-load="true" style="width:100%;height:100%;"/>
+        <image src="https://img.dewly.cn/car/{{item.img}}" bindtap="durationChange" data-url="{{item.url}}" class="slide-image" lazy-load="true" style="width:100%;height:100%;"/>
       </swiper-item>
     </block>
   </swiper>

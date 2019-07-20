@@ -241,3 +241,23 @@ App({
 //   "selectedIconPath": "image/classification-on.png",
 //   "text": "分类"
 // },
+
+// {
+//   "pagePath": "page/component/pages/details/car",
+//     "iconPath": "image/shop.png",
+//     "selectedIconPath": "image/shop-on.png",
+//     "text": "购物车"
+// },
+
+// {
+//   "pagePath": "page/component/index",
+//     "iconPath": "image/home.png",
+//     "selectedIconPath": "image/home-on.png",
+//     "text": "首页"
+// },
+// {
+//   "pagePath": "page/component/pages/car/change",
+//     "iconPath": "image/car.png",
+//     "selectedIconPath": "image/car-on.png",
+//     "text": "停车位"
+// },
