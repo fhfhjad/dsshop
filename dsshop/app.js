@@ -30,7 +30,6 @@ App({
               if (res.authSetting['scope.userInfo'] === false) {  //用户信息
                 that.unauthorizedPrompt();
               }
-
             }
           })
           //console.log('App Launch')
@@ -40,8 +39,8 @@ App({
         }
       })
     }
-
   },
+
   //未授权提示
   unauthorizedPrompt: function () {
     wx.showModal({
@@ -52,38 +51,31 @@ App({
     })
   },
   onShow: function () {
-    
     //console.log(wx.getStorageSync('openid'))
-    
     //wx.clearStorageSync();//清除缓存
-
-
     //console.log('App Show')
   },
   //购物车角标
   getCarAngle: function (t) {
-    var getcart = wx.getStorageSync('getcart'), carttotalnum
-    carttotalnum = Object.keys(getcart).length.toString()
-    if (Object.keys(getcart).length>0){
-      //console.log(carttotalnum)
-      wx.setTabBarBadge({
-        index: 2,
-        text: carttotalnum,
-        complete:function(res){
-          //console.log(res)
-        }
-      })
-    }else{  //没有购物车，移除角标
-        wx.removeTabBarBadge({
-          index: 2,
-          complete: function (res) {
-            //console.log(res)
-          }
-        })
-      
-    }
-    
-
+    // var getcart = wx.getStorageSync('getcart'), carttotalnum
+    // carttotalnum = Object.keys(getcart).length.toString()
+    // if (Object.keys(getcart).length>0){
+    //   //console.log(carttotalnum)
+    //   wx.setTabBarBadge({
+    //     index: 2,
+    //     text: carttotalnum,
+    //     complete:function(res){
+    //       //console.log(res)
+    //     }
+    //   })
+    // }else{  //没有购物车，移除角标
+    //     wx.removeTabBarBadge({
+    //       index: 2,
+    //       complete: function (res) {
+    //         //console.log(res)
+    //       }
+    //     })
+    // }
   },
   
   globalData: {
@@ -98,7 +90,6 @@ App({
     wx.getUserInfo({
   
       success: function (res) {
-        
         wx.setStorage({
           key: "userInfo",
           data: res.userInfo
@@ -114,7 +105,6 @@ App({
           success: function (res) {
             self.globalData.hasLogin = true;
             //console.log(res.data);
-
           }
         })
 
@@ -126,9 +116,7 @@ App({
   // 登录处理+获取用户详情
   getUserOpenId: function (callback) {
     var self = this
-    
     if (!wx.getStorageSync('openid')) {
-      
       wx.login({
         success: function (data) {
           //console.log(data);
@@ -164,7 +152,6 @@ App({
             },
             fail: function (res) {
               //console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
-
             }
           })
         },
@@ -220,17 +207,13 @@ App({
     if (wx.getStorageSync('getgoods')) {
       setcart = wx.getStorageSync('getgoods');
     }
-
     code = id + '-' + color + '-' + size;
-
     setcart[code] = {};
     setcart[code]['nub'] = nub;
-
     setcart[code]['id'] = id;
     setcart[code]['color'] = color;
     setcart[code]['size'] = size;
     wx.setStorageSync('getgoods', setcart);
-    
   },
 })
 
